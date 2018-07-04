@@ -1,5 +1,5 @@
 ---
-- hosts: TestPis
+- hosts: all
   remote_user: pi
   vars: 
   - LOCAL_DIR: "/home/test/Documents/ansible_sandbox"
