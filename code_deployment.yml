@@ -1,0 +1,19 @@
+---
+- hosts: testpi
+  remote_user: pi
+  vars: 
+  - LOCAL_DIR: "."
+  - REMOTE_DIR: "/home/pi/cwatch"
+  - CLIENT_CODE: "test1.py"
+  tasks: 
+  - name : copies go code to client 
+    copy : 
+      src: "{{LOCAL_DIR}}/{{CLIENT_CODE}}"
+      dest: "{{REMOTE_DIR}}"
+      owner: pi
+      mode: u+rwx 
+  - name : runs code
+    shell: "python {{REMOTE_DIR}}/{{CLIENT_CODE}}"
+    register: result
+
+  - debug: var=result.stdout_lines
