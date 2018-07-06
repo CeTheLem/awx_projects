@@ -2,7 +2,7 @@
 - hosts: all
   remote_user: pi
   vars: 
-  - LOCAL_DIR: "/home/test/Documents/ansible_sandbox/"
+  - LOCAL_DIR: "/home/test/Documents/ansible_sandbox"
   - REMOTE_DIR: "/home/pi/cwatch"
   - CLIENT_CODE: "test1.py"
   tasks: 
