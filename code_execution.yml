@@ -7,5 +7,5 @@
   - name : runs code
     shell: "python {{REMOTE_DIR}}/{{CLIENT_CODE}}"
     register: result
-
+    failed_when: result "'FAILED' in result.stdout_lines"
   - debug: var=result.stdout_lines
