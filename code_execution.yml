@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: pi
+  vars: 
+  - REMOTE_DIR: "/home/pi/cwatch"
+  - CLIENT_CODE: "test1.py"
+  tasks: 
+  - name : runs code
+    shell: "python {{REMOTE_DIR}}/{{CLIENT_CODE}}"
+    register: result
+
+  - debug: var=result.stdout_lines
