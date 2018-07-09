@@ -7,6 +7,6 @@
   - name : runs code
     shell: "python {{REMOTE_DIR}}/{{CLIENT_CODE}}"
     register: result
-    failed_when: {{result.stdout_lines|regex_search('(SUCCEEDED)')}} == ""
+    failed_when: result is search("SUCCEEDED")
 
   - debug: var=result.stdout_lines
