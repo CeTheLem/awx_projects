@@ -10,7 +10,7 @@
     copy : 
       src: "{{LOCAL_DIR}}/{{CLIENT_CODE}}"
       dest: "{{REMOTE_DIR}}"
-      owner: pi
+      owner: test
       mode: u+rwx 
   - name : runs code
     shell: "python {{REMOTE_DIR}}/{{CLIENT_CODE}}"
