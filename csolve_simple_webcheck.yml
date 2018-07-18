@@ -7,5 +7,6 @@
   - name : runs code
     shell: "{{REMOTE_DIR}}/{{CLIENT_CODE}} -syslog"
     register: result
+    ignore_errors: yes
 
   - debug: var=result.stdout_lines
