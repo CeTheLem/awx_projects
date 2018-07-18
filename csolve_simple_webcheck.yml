@@ -4,8 +4,10 @@
   vars: 
   - REMOTE_DIR: "/home/pi/cwatch"
   tasks: 
+  - name : deleting output file
+    shell: "rm {{REMOTE_DIR/output}}"
   - name : runs code
-    shell: "{{REMOTE_DIR}}/{{CLIENT_CODE}} -syslog"
+    shell: "{{REMOTE_DIR}}/{{CLIENT_CODE}} -syslog >> output"
     register: result
     ignore_errors: yes
 
