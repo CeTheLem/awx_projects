@@ -5,7 +5,7 @@
   - REMOTE_DIR: "/home/pi/cwatch"
   tasks: 
   - name : runs code
-    shell: "{{REMOTE_DIR}}/{{CLIENT_CODE}}"
+    shell: "{{REMOTE_DIR}}/{{CLIENT_CODE}} -syslog"
     register: result
 
   - debug: var=result.stdout_lines
