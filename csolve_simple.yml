@@ -1,0 +1,12 @@
+---
+- hosts: testpi
+  remote_user: pi
+  tasks: 
+  - name : runs code
+    command: ./client -syslog
+    args: 
+      chdir: /home/pi/cwatch/
+    register: result
+    ignore_errors: yes
+
+  - debug: var=result.stdout_lines
